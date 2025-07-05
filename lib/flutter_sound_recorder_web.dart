@@ -264,8 +264,7 @@ class FlutterSoundRecorderWeb extends FlutterSoundRecorderPlatform {
     } else {
       getWebSession(
         callback,
-      )!
-          .setSubscriptionDuration(duration!.inMilliseconds);
+      )!.setSubscriptionDuration(duration!.inMilliseconds);
     }
   }
 

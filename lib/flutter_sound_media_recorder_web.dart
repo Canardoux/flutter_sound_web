@@ -22,7 +22,8 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter_sound_platform_interface/flutter_sound_platform_interface.dart';
 import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform_interface.dart';
-import 'dart:typed_data' as t
+import 'dart:typed_data'
+    as t
     show Float32List, Uint8List, Int16List, ByteBuffer;
 import 'package:logger/logger.dart' show Level;
 //import 'package:web/web.dart' as web;
@@ -190,7 +191,7 @@ class FlutterSoundMediaRecorderWeb {
       sampleRate: sampleRate,
     );
     audioCtx = AudioContext(audioCtxOptions);
-/*******/
+    /*******/
     await audioCtx!.audioWorklet
         .addModule(
           "./assets/packages/flutter_sound_web/src/flutter_sound_stream_processor.js",
@@ -209,7 +210,7 @@ class FlutterSoundMediaRecorderWeb {
     );
 
     streamNode.port.onmessage = onMessage.toJS;
-/*****/
+    /*****/
     //AudioDestinationNode dest = audioCtx!.destination;
 
     var constrains = MediaStreamConstraints(
@@ -250,10 +251,11 @@ class FlutterSoundMediaRecorderWeb {
 
     callback.log(Level.debug, 'Start Recorder to Stream');
     await _startRecorderToStream(
-        codec: codec,
-        sampleRate: sampleRate,
-        numchannels: numChannels,
-        interleaved: interleaved);
+      codec: codec,
+      sampleRate: sampleRate,
+      numchannels: numChannels,
+      interleaved: interleaved,
+    );
     callback.startRecorderCompleted(RecorderState.isRecording.index, true);
   }
 

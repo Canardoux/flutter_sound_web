@@ -175,17 +175,20 @@ class FlutterSoundPlugin //extends FlutterSoundPlatform
     Completer<bool> completer = Completer<bool>();
 
     newScript.setProperty(
-        'onload'.toJS,
-        (MessageEvent e) {
-          completer.complete(true);
-        }.toJS);
+      'onload'.toJS,
+      (MessageEvent e) {
+        completer.complete(true);
+      }.toJS,
+    );
 
     newScript.setProperty(
-        'onerror'.toJS,
-        (MessageEvent e) {
-          completer
-              .completeError(AssertionError('Cannot load script $scriptName'));
-        }.toJS);
+      'onerror'.toJS,
+      (MessageEvent e) {
+        completer.completeError(
+          AssertionError('Cannot load script $scriptName'),
+        );
+      }.toJS,
+    );
 
     //newScript.onload = () => console.log(`${file} loaded successfully.`);
     //newScript.onerror = () => console.error(`Error loading script: ${file}`);
@@ -200,11 +203,14 @@ class FlutterSoundPlugin //extends FlutterSoundPlatform
       //print('Loading scripts');
       await loadScript('./assets/packages/flutter_sound_web/howler/howler.js');
       await loadScript(
-          './assets/packages/flutter_sound_web/src/flutter_sound.js');
+        './assets/packages/flutter_sound_web/src/flutter_sound.js',
+      );
       await loadScript(
-          './assets/packages/flutter_sound_web/src/flutter_sound_player.js');
+        './assets/packages/flutter_sound_web/src/flutter_sound_player.js',
+      );
       await FlutterSoundPlugin.loadScript(
-          './assets/packages/flutter_sound_web/src/flutter_sound_recorder.js');
+        './assets/packages/flutter_sound_web/src/flutter_sound_recorder.js',
+      );
     }
     _alreadyInited = true;
     return true;
