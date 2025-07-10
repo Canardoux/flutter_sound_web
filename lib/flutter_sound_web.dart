@@ -30,8 +30,8 @@ import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:flutter_sound_web/flutter_sound_player_web.dart';
 import 'package:flutter_sound_web/flutter_sound_recorder_web.dart';
-import 'package:flutter/foundation.dart';
-import 'package:logger/logger.dart' show Level, Logger;
+//import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart' show Logger;
 
 var mime_types = [
   'audio/webm\;codecs=opus', // defaultCodec,
@@ -194,7 +194,7 @@ class FlutterSoundPlugin //extends FlutterSoundPlatform
     //newScript.onerror = () => console.error(`Error loading script: ${file}`);
 
     document.head!.appendChild(newScript);
-    return completer!.future;
+    return completer.future;
   }
 
   static bool _alreadyInited = false;

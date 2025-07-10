@@ -95,7 +95,7 @@ class FlutterSoundMediaRecorderWeb {
     List<t.ByteBuffer> data,
   ) {
     int ln = data[0].asFloat32List().length;
-    int channelCount = data.length;
+    //int channelCount = data.length;
     List<t.Int16List> r = [];
     for (int channel = 0; channel < data.length; ++channel) {
       t.Float32List v = data[channel].asFloat32List();
@@ -113,8 +113,8 @@ class FlutterSoundMediaRecorderWeb {
     FlutterSoundRecorderCallback callBack,
     List<t.ByteBuffer> data,
   ) {
-    int ln = data[0].asFloat32List().length;
-    int channelCount = data.length;
+    //int ln = data[0].asFloat32List().length;
+    //int channelCount = data.length;
     List<t.Float32List> r = [];
     for (int channel = 0; channel < data.length; ++channel) {
       t.Float32List v = data[channel].asFloat32List();
@@ -167,8 +167,8 @@ class FlutterSoundMediaRecorderWeb {
   }
 
   void onMessage(MessageEvent e) {
-    var x = e.type;
-    var y = e.origin;
+    //var x = e.type;
+    //var y = e.origin;
     var d = e.data;
     var msg = d!.dartify() as Map;
     var msgType = msg['msgType'];
@@ -304,7 +304,7 @@ class FlutterSoundMediaRecorderWeb {
     closeOnProgress();
     if (audioCtx != null &&
         audioCtx!.state == 'running' &&
-        callback!.getSubscriptionDuration() != null &&
+        //callback!.getSubscriptionDuration() != null &&
         callback!.getSubscriptionDuration() != Duration.zero) {
       maxAmplitude = 0;
       onProgressTimer = Timer.periodic(callback!.getSubscriptionDuration(), (

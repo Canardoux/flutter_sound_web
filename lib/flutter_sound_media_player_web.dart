@@ -96,8 +96,8 @@ class FlutterSoundMediaPlayerWeb {
     );
 
     streamNode!.port.onmessage = (MessageEvent e) {
-      var x = e.type;
-      var y = e.origin;
+      //var x = e.type;
+      //var y = e.origin;
       var d = e.data;
       var msg = d!.dartify() as Map;
       var msgType = msg['msgType'];

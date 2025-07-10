@@ -198,7 +198,7 @@ class FlutterSoundRecorderWeb extends FlutterSoundRecorderPlatform {
     }
   }
 
-  static bool _alreadyInited = false;
+  //static bool _alreadyInited = false;
 
   /// The current state of the Recorder
   @override
