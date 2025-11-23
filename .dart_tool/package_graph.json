@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "flutter_sound_web",
-      "version": "9.29.4",
+      "version": "9.29.5",
       "dependencies": [
         "flutter",
         "flutter_sound_platform_interface",
@@ -81,7 +81,7 @@
     },
     {
       "name": "flutter_sound_platform_interface",
-      "version": "9.29.4",
+      "version": "9.29.5",
       "dependencies": [
         "flutter",
         "logger",
