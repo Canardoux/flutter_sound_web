@@ -22,8 +22,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter_sound_platform_interface/flutter_sound_platform_interface.dart';
 import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform_interface.dart';
-import 'dart:typed_data'
-    as t
+import 'dart:typed_data' as t
     show Float32List, Uint8List, Int16List, ByteBuffer;
 import 'package:logger/logger.dart' show Level;
 //import 'package:web/web.dart' as web;
